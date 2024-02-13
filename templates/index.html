@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}" />
+    <title>Welcom to your Transpiler</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Welcom to your Transpiler</h1>
+      <p>
+        Je suis l'Assistant qui t'aide à convrtir n'importe quel programe d'un Language à un autre
+      </p>
+      <form id="transpileForm">
+        <div class="form-group mt-4">
+          <label for="inputLanguage">Actuel Language:</label>
+          <select
+            class="form-control"
+            id="inputLanguage"
+            required>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <option value="ruby">Ruby</option>
+            <option value="php">PHP</option>
+            <option value="go">Go</option>
+            <option value="swift">Swift</option>
+            <option value="typescript">TypeScript</option>
+            <option value="cpp">C++</option>
+            <option value="cpp">C</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div
+          class="form-group"
+          id="otherLanguageGroup"
+          style="display: none">
+          <label for="otherLanguage">Entrer ton Language:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="otherLanguage" />
+        </div>
+        <div class="form-group">
+          <label for="targetLanguage">Select Target Language:</label>
+          <select
+            class="form-control"
+            id="targetLanguage"
+            required>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <option value="ruby">Ruby</option>
+            <option value="php">PHP</option>
+            <option value="go">Go</option>
+            <option value="swift">Swift</option>
+            <option value="typescript">TypeScript</option>
+            <option value="cpp">C++</option>
+            <option value="cpp">C</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div
+          class="form-group"
+          id="otherTargetLanguageGroup"
+          style="display: none">
+          <label for="otherTargetLanguage">Enter Target Language:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="otherTargetLanguage" />
+        </div>
+        <div class="form-group mt-4">
+          <label for="code">Enter Your Code:</label>
+          <textarea
+            class="form-control"
+            id="code"
+            rows="5"
+            required></textarea>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary mt-3">
+          Transpile
+        </button>
+      </form>
+      <div
+        id="response"
+        class="mt-4"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
